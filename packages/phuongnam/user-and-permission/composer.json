@@ -1,0 +1,23 @@
+{
+    "name": "phuongnam/user-and-permission",
+    "description": "Quan ly user va quyen.",
+    "authors": [
+        {
+            "name": "Trinh Tran Phuong Nam",
+            "email": "ttpn18121996@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/passport": "^10.0",
+        "hisorange/browser-detect": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhuongNam\\UserAndPermission\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    }
+}
