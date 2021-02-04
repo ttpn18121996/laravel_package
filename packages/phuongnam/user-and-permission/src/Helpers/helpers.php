@@ -22,3 +22,10 @@ if (! function_exists('nRes')) {
         return $res->response($data, $message, $code);
     }
 }
+
+if (! function_exists('phuongnam_path')) {
+    function phuongnam_path()
+    {
+        return '';
+    }
+}

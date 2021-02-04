@@ -33,7 +33,14 @@ class UserAndPermissionServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'userandpermission');
+        $viewPath = resource_path('views/user-and-permission');
+        $sourcePath = __DIR__.'/../resources/views';
+
+        if (is_dir($viewPath)) {
+            $this->loadViewsFrom($viewPath, 'userandpermission');
+        } else {
+            $this->loadViewsFrom($sourcePath, 'userandpermission');
+        }
     }
 
     public function registerObservers()

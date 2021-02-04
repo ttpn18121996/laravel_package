@@ -10,10 +10,9 @@
         <link rel="stylesheet" href="{{ asset('static/backend/css/userandpermission.css') }}">
 
     </head>
-    <body class="sidebar-mini layout-fixed {{ ! is_null(auth()->user()->setting) ? 'accent-'.auth()->user()->setting->color : '' }}" style="height: auto;">
+    <body class="sidebar-mini layout-fixed {{ ! is_null(auth('phuongnam')->user()->setting) ? 'accent-'.auth('phuongnam')->user()->setting->color : '' }}" style="height: auto;">
         <div class="wrapper">
-            {{--<x-navbar />
-            <x-sidebar />--}}
+
             <div class="content-wrapper">
                 @yield('content')
             </div>
