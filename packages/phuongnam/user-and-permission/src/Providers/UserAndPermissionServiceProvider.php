@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class UserAndPermissionServiceProvider extends ServiceProvider
 {
+    protected $moduleName = 'user-and-permission';
 
     public function boot()
     {
@@ -33,14 +34,26 @@ class UserAndPermissionServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = resource_path('views/user-and-permission');
+        $viewPath = resource_path('views/phuongnam/' . $this->moduleName);
+
         $sourcePath = __DIR__.'/../resources/views';
 
-        if (is_dir($viewPath)) {
-            $this->loadViewsFrom($viewPath, 'userandpermission');
-        } else {
-            $this->loadViewsFrom($sourcePath, 'userandpermission');
+        $this->publishes([
+            $sourcePath => $viewPath
+        ], ['views', $this->moduleName . '-module-views']);
+
+        $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), 'phuongnam_userandpermission');
+    }
+
+    private function getPublishableViewPaths(): array
+    {
+        $paths = [];
+        foreach (\Config::get('view.paths') as $path) {
+            if (is_dir($path . '/phuongnam/' . $this->moduleName)) {
+                $paths[] = $path . '/phuongnam/' . $this->moduleName;
+            }
         }
+        return $paths;
     }
 
     public function registerObservers()

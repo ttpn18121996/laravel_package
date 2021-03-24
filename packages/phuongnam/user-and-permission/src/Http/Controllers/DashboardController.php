@@ -34,6 +34,6 @@ class DashboardController extends Controller
             session(['user_token' => $token]);
         }
 
-        return view('userandpermission::index');
+        return view('phuongnam_userandpermission::index');
     }
 }

@@ -54,7 +54,7 @@ class UserController extends Controller
 
         $users = $this->user->getListPagination($filter);
 
-        return view('userandpermission::user.index', [
+        return view('phuongnam_userandpermission::user.index', [
             'filter' => $users['filter'],
             'list' => $users['data'],
             'list_status' => $this->listStatus,
@@ -71,7 +71,7 @@ class UserController extends Controller
         $list_groups = $this->group->getListAll()['data']->toArray();
         $list_permissions = Permission::all()->toArray();
 
-        return view('userandpermission::user.create', compact('list_groups', 'list_permissions'));
+        return view('phuongnam_userandpermission::user.create', compact('list_groups', 'list_permissions'));
     }
 
     /**
@@ -115,7 +115,7 @@ class UserController extends Controller
         $list_groups = $detail->groups->toArray();
         $list_permissions = $detail->permissions->toArray();
 
-        return view('userandpermission::user.show', compact('detail', 'list_groups', 'list_permissions'));
+        return view('phuongnam_userandpermission::user.show', compact('detail', 'list_groups', 'list_permissions'));
     }
 
     /**
@@ -142,7 +142,7 @@ class UserController extends Controller
             return $permission['selected'];
         })->count() == $list_permissions->count();
 
-        return view('userandpermission::user.edit', compact(
+        return view('phuongnam_userandpermission::user.edit', compact(
             'detail',
             'list_groups',
             'list_permissions',

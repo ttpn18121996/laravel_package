@@ -1,4 +1,4 @@
-@extends('userandpermission::layouts.master')
+@extends('phuongnam_userandpermission::layouts.master')
 @section('title', __('Dashboard Admin'))
 @section('content')
 <section class="content">
