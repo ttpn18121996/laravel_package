@@ -35,7 +35,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('userandpermission::auth.login');
+        return view('phuongnam_userandpermission::auth.login');
     }
 
     /**

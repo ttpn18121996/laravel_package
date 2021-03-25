@@ -11,7 +11,7 @@
         .login-form {
             width: 360px;
             background: #f1f1f1;
-            height: 580px;
+            height: 550px;
             padding: 80px 40px;
             border-radius: 10px;
             position: absolute;
